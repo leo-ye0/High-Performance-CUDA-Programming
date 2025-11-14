@@ -1,0 +1,18 @@
+Performance Comparison Table
+====================================================================================================
+Implementation  N=128       N=256       N=512       N=1024      N=1536      N=2048      N=3072      N=4096      
+----------------------------------------------------------------------------------------------------
+CPU (C)         0.003       0.022       0.114       0.943       3.166       17.457      71.476      204.404     
+Naive CUDA      0.021       0.081       0.507       3.670       12.779      33.682      120.929     284.910     
+Optimized CUDA  0.026       0.055       0.292       2.218       7.803       18.788      79.760      184.784     
+
+Speedup Analysis
+============================================================
+N=128: Naive=133x, Optimized=107x, Improvement=0.8x
+N=256: Naive=272x, Optimized=401x, Improvement=1.5x
+N=512: Naive=225x, Optimized=390x, Improvement=1.7x
+N=1024: Naive=257x, Optimized=425x, Improvement=1.7x
+N=1536: Naive=248x, Optimized=406x, Improvement=1.6x
+N=2048: Naive=518x, Optimized=929x, Improvement=1.8x
+N=3072: Naive=591x, Optimized=896x, Improvement=1.5x
+N=4096: Naive=717x, Optimized=1106x, Improvement=1.5x
