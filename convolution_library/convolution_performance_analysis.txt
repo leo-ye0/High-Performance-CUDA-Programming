@@ -1,0 +1,27 @@
+Convolution Performance Analysis
+========================================
+
+Test Configuration:
+- Images: 256x256, 512x512, 1024x1024 (synthetic random)
+- Filters: 3x3 edge detection, 5x5/7x7 averaging
+- Data: Unsigned int, values 0-255
+
+Performance Results:
+------------------------------------------------------------
+Size       Filter   CPU (s)    CUDA (s)   Python (s)  
+------------------------------------------------------------
+256x256    3x3      0.0011     0.3135     0.5572      
+256x256    5x5      0.0023     0.1942     0.4466      
+256x256    7x7      0.0042     0.1806     0.4350      
+512x512    3x3      0.0042     0.1744     0.4332      
+512x512    5x5      0.0091     0.1764     0.4203      
+512x512    7x7      0.0166     0.1701     0.4201      
+1024x1024  3x3      0.0164     0.1737     0.4223      
+1024x1024  5x5      0.0365     0.1729     0.4164      
+1024x1024  7x7      0.0662     0.1730     0.4073      
+
+Performance Summary:
+1. CPU implementation fastest for small convolution problems
+2. GPU setup overhead dominates computational benefits
+3. Python interface adds process startup overhead
+4. All GPU implementations slower than CPU at tested sizes
